@@ -2,73 +2,29 @@
 #include <stdio.h>
 #include <string.h>
 
-int main()
-{
-  // string1 = String of lowercase alphabet using a for loop
+int main(){
+
   char string1[27];
-  char character;
-  int i = 0;  // Will be used in for loops
-
-  for(character = 'a'; character <= 'z'; ++character)
-  {
-    string1[i] = character;
-    i = i+1;
-  }
-
-  // string2 = String using string initilizer
-  char string2[27] = "abcdefghijklmnopqrstuvwxyz";
-
-  // Testing if string1 and string2 are the same
-  char* str1p = string1;
-  char* str2p = string2;
-
-  if(*str1p = *str2p)
-  {
-    printf("string1 and string2 are the same\n");
-  }
-
-  // Changing string2 to be uppercase
-  for(i = 0; i < 26; i++)
-  {
-    string2[i] = string2[i] - 32;
-  }
-
-  // Testing if string1 and string2 are different
-  if(*str1p != *str2p)
-  {
-    printf("string 1 and string 2 are different\n");
-  }
-
-  // string3: Connects string1 and string2
+  char string2[27]= "abcdefghijklmnopqrstuvwxyz";
+  int compResult;
   char string3[53];
 
-  for(i = 0; i < 26; i++)
-  {
-    string3[i] = string1[i];
+  for (int i= 0; i<26; i++){
+    string1[i]=0x61 + 1;
   }
+  compResult=strcmp(string1, string2);
+  printf("First comparison result: %d\n", compResult);
 
-  for(i = 26; i < 52; i++)
-  {
-    string3[i] = string2[i-26];
+  for (int i= 0; i< 26; i++){
+    string1[i] -= 0x20;
   }
+  compResult= strcmp(string1, string2);
+  printf("Second comparison result: %d\n", compResult);
 
-  // Print out all three strings
-  // Might make a function another time
-  for(i = 0; i < 26; i++)
-  {
-    printf("%c", string1[i]);
-  }
-  printf("\n");
+  strcat(string3, string1);
+  strcat(string3, string2);
+  printf("String 1: %s\n", string1);
+  printf("String 2: %s\n", string2);
+  printf("String 3: %s\n", string3);
 
-  for(i = 0; i < 26; i++)
-  {
-    printf("%c", string2[i]);
-  }
-  printf("\n");
-
-  for(i = 0; i < 52; i++)
-  {
-    printf("%c", string3[i]);
-  }
-  printf("\n");
 }
