@@ -9,7 +9,7 @@ default: $(TARGET)
 all: default
 
 HEADERS = test.h
-OBJECTS = gpa.o test.o
+OBJECTS = gpa.c
 
 %.o: %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
