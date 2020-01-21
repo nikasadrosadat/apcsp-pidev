@@ -88,13 +88,5 @@ int main(int argc, char* argv[])
   //(for terminal)printf("DO YOU WANT YOUR GPA AND GRADES TO BE RATED?(y/n)\n");
   //(for terminal)scanf("%c", &c);
     sscanf(argv[5], "%c", &c);
-
-  if (c == 'y')
-  { 
-    rateg(gpa, &gm[0]);
+ 
   }
-  else
-  {
-    return 0;
-  }  
-}
