@@ -2,7 +2,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
-#include "test.h"
+#include "test.c"
 
 void change(int i, char grade[], float gm[], int* n)
 {
