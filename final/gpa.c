@@ -76,15 +76,15 @@ int main(int argc, char* argv[])
   }
   if (gpa > 3.0)
   {
-    printf("YOUR GPA IS ABOVE NATIONAL AVERAGE:))\n");
+    printf("Consider UCLA, UCSD, NYU, USC, Tulane University, University of Michigan, University of Virginia:))\n");
   }
   else if (gpa < 3.0)
   {
-    printf("YOUR GPA IS BELOW NATIONAL AVERAGE:((\n");
+    printf("Consider University of Arizona, University of Boulder, Community Colleges, Utah State University, University of Wyoming, Lewis-Clark State College:((\n");
   }
   else
   {
-    printf("YOUR GPA IS EQUAL TO NATIONAL AVERAGE!\n");
+    printf("Consider San Fransisco State University, Sonoma State University, Alabama State University, The College of New Jersey, University at Buffalo\n");
   }
   //(for terminal)printf("DO YOU WANT YOUR GPA AND GRADES TO BE RATED?(y/n)\n");
   //(for terminal)scanf("%c", &c);
