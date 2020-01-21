@@ -8,7 +8,7 @@ CFLAGS = -g -Wall -I.
 default: $(TARGET)
 all: default
 
-HEADERS = test.h
+HEADERS = test.c
 OBJECTS = gpa.c
 
 %.o: %.c $(HEADERS)
