@@ -85,8 +85,4 @@ int main(int argc, char* argv[])
   {
     printf("Consider San Fransisco State University, Sonoma State University, Alabama State University, The College of New Jersey, University at Buffalo\n");
   }
-  //(for terminal)printf("DO YOU WANT YOUR GPA AND GRADES TO BE RATED?(y/n)\n");
-  //(for terminal)scanf("%c", &c);
-    sscanf(argv[5], "%c", &c);
- 
-  }
+
