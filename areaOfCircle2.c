@@ -1,52 +1,34 @@
 #include <stdio.h>
 #include <math.h>
 
-// Circle area function definition
-float areaOfCircle(float r)
-{
-  float a;
-  a = M_PI*r*r;
-  return a;
+float areaofCircle(float radius) {
+  float area = radius*radius*M_PI;
+  return area;
 }
 
-// Calling area function
-int main()
-{
-  // Setting radii bounds
-  float num1;
-  float num2;
-  float inc;
-  char input[256];
-
-  printf("Choose a number for the lower bound of the radii\n");
-  while(1)
-  {
-    fgets(input, 256, stdin);
-    if(sscanf(input, "%f", &num1) == 1) break;
-    printf("Not a valid number. Try again\n");
+int main(int argc, char* argv[]) {
+  char inString[256];
+  float minR, maxR, temp;
+  if (argc < 3) {
+    printf("Please input the minimum value:\n");
+    fgets(inString, 256, stdin);
+    sscanf(inString, "%f", &minR);
+    printf("Please input the maximum value:\n");
+    fgets(inString, 256, stdin);
+    sscanf(inString, "%f", &maxR);
   }
-
-  do
-  {
-    printf("Choose a larger number for the upper bound\n");
-    fgets(input, 256, stdin);
-    sscanf(input, "%f", &num2);
-  } while(num2 <= num1);
-
-  // Setting how much to increment radius by
-  printf("Choose a number to increment the radius by\n");
-  while(1)
-  {
-    fgets(input, 256, stdin);
-    if(sscanf(input, "%f", &inc) == 1) break;
-    printf("Not a valid number. Try again\n");
+  else {
+    sscanf(argv[1], "%f", &minR);
+    sscanf(argv[2], "%f", &maxR);
   }
-
-  // Executing area function
-  for (float radius = num1; radius <= num2; radius = radius + inc)
-  {
-    float area;
-    area = areaOfCircle(radius);
-    printf("r = %f, a = %f\n", radius, area);
+  if (minR > maxR) {
+      printf("Minimum value is greater than the maximum value, using minimum as maximum\n");
+      temp = minR;
+      minR = maxR;
+      maxR = temp;
+    } 
+  for (float i = minR; i <= maxR; i++) {
+     float solution = areaofCircle(i);
+     printf("%f\n", solution);
   }
 }
