@@ -83,6 +83,6 @@ int main(int argc, char* argv[])
   }
   else
   {
-    printf("Consider San Fransisco State University, Sonoma State University, Alabama State University, The College of New Jersey, University at Buffalo\n");
+    printf("Consider San Fransisco State University, University of Colorado Denver, Sonoma State University, Alabama State University, The College of New Jersey, University at Buffalo\n");
   }
 }
