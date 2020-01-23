@@ -1,34 +1,37 @@
 #include <stdio.h>
-#include <math.h>
 
-float areaofCircle(float radius) {
-  float area = radius*radius*M_PI;
-  return area;
+float areaFunction (float r)
+{
+  float a;
+  a = r*r*3.14;
+  
+  return a;
 }
 
-int main(int argc, char* argv[]) {
-  char inString[256];
-  float minR, maxR, temp;
-  if (argc < 3) {
-    printf("Please input the minimum value:\n");
-    fgets(inString, 256, stdin);
-    sscanf(inString, "%f", &minR);
-    printf("Please input the maximum value:\n");
-    fgets(inString, 256, stdin);
-    sscanf(inString, "%f", &maxR);
+int main()
+{
+  char input[256];
+  float r, rmin, rmax;
+  
+  printf("Smallest Radius: ");
+  while (1)
+  {
+    fgets(input, 256, stdin);
+    if(sscanf(input, "%f", &rmin) == 1) break;
+    printf(" Please input a number.\n");
   }
-  else {
-    sscanf(argv[1], "%f", &minR);
-    sscanf(argv[2], "%f", &maxR);
+  
+  printf("Largest Radius: ");
+  while(1)
+  {
+    fgets(input, 256, stdin);
+    if(sscanf(input, "%f", &rmax) == 1) break;
+    printf(" Please input a number.\n");
   }
-  if (minR > maxR) {
-      printf("Minimum value is greater than the maximum value, using minimum as maximum\n");
-      temp = minR;
-      minR = maxR;
-      maxR = temp;
-    } 
-  for (float i = minR; i <= maxR; i++) {
-     float solution = areaofCircle(i);
-     printf("%f\n", solution);
+  
+  for (r = rmin ; r <= rmax ; r ++)
+  {
+    printf("Area: %.2f\n", areaFunction(r));
   }
+  return 0;
 }
